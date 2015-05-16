@@ -14,93 +14,66 @@ html {
     height: 100%;
 }
 
+
+
 @media(min-width:767px) {
-    .navbar {
-        padding-top: 20px;
-		
-		padding-left: 20px;
-        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
-        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
-        transition: background .5s ease-in-out,padding .5s ease-in-out;
+
+
+
+.navbar {
+    padding-top: 20px;
+	padding-left: 20px;
+    -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+    -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+    transition: background .5s ease-in-out,padding .5s ease-in-out;
     }
 
     .top-nav-collapse {
         padding: 0;
     }
 }
-
 #banner-symbol {
-    float: right;
+	float: right;
 }
 
 .background {
 
-    background-image: url("../img/samurai-background.png");
-    background-repeat: no-repeat;
-    -webkit-background-size: 100% 100%;
-    -moz-background-size: 100% 100%;
-    -o-background-size: 100% 100%;
-    background-size: 100% 100%;
-
-}
+	background-image: url("../img/samurai-background.png");
+	background-size:cover;
+	}
 
 .container {
 	margin-left: auto;
     margin-right: auto;
     width: 70%;
-    border-style: outset;
-    border-width: 5px;
-    border-color: black;
-    background-color: white;
-    opacity: 0.9;
-	
+	border-style: outset;
+	border-width: 5px;
+	border-color: black;
+	background-color: white;
+	opacity: 0.9;
 }
 .content{
 	min-height: 300px;
-    margin-left: auto;
+	margin-left: auto;
     margin-right: auto;
     width: 70%;
-    border-style: outset;
-    border-width: 5px;
-    border-color: black;
-    background-color: white;
-    opacity: 0.9;
+	border-style: outset;
+	border-width: 5px;
+	border-color: black;
+	background-color: white;
+	opacity: 0.9;
 
 }
 
 .info{
-    padding: 10px;
+	padding: 10px;
     width: 40%;
-    
-}
-
-#questionDiv {
-    width: 600px;
-    height: 400px;
-    float: right;
+	
 }
 
 /* Demo Sections - You can use these as guides or delete them - the scroller will work with any sort of height, fixed, undefined, or percentage based.
 The padding is very important to make sure the scrollspy picks up the right area when scrolled to. Adjust the margin and padding of sections and children 
 of those sections to manage the look and feel of the site. */
-
-#gameDiv {
-    height: 100%;
-    padding-top: 150px;
-    text-align: center;
-    background: #fff;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    padding-bottom: 500px;
-}
-
-#mainContent {
-    height: 100%;
-    padding-top: 5px;
-    text-align: center;
-    background: #fff;
-}
 
 .intro-section {
     height: 100%;
@@ -115,3 +88,17 @@ of those sections to manage the look and feel of the site. */
     text-align: center;
     
 }
+
+/*.services-section {
+    height: 100%;
+    padding-top: 150px;
+    text-align: center;
+    background: #fff;
+}
+
+.contact-section {
+    height: 100%;
+    padding-top: 150px;
+    text-align: center;
+    background: #eee;
+}*/

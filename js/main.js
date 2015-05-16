@@ -1,17 +1,6 @@
 var tutorials = [];
-var questions = [];
 
 function setupGlobals() {
-	var temp = '/partials/questionx.html';
-	for (var i = 0 ; i < 36 ; i++) {
-		var intstring = '';
-		if (i < 10) {
-			intstring = '0';
-		}
-		intstring = intstring.concat(i+1);
-		var url = temp.replace("x", intstring);
-		questions.push(url); 
-	}
 	var temp = '/partials/tutorialx.html';
 	for (var i = 0 ; i < 4 ; i++) {
 		var intstring = '';
@@ -22,28 +11,23 @@ function setupGlobals() {
 		var url = temp.replace("x", intstring);
 		tutorials.push(url); 
 	}
+	//$('#gameDiv').hide();
+
 }
 
 
 /*
 	Parameters:
-		type: integer variable
- 			possible values:
- 				0: game
- 				1: content
  		key: string variable
  			depends on destination
  	Returns: none
 */
-function loadPage(type, key) {
+function loadPage(key) {
 	
 	/* variable for url */
 	var URLvar = '';
 
 	/* if else chain to set url variable */
-	if (key === 'home') {
-		URLvar = '/partials/home.html';
-	}
 
 	for (var i = 0 ; i < 4 ; i++) {
 		var intstring = '';
@@ -56,35 +40,20 @@ function loadPage(type, key) {
 		}
 	}
 
-	for (var i = 0 ; i < 36 ; i++) {
-		var intstring = '';
-		if (i < 10) {
-			intstring = '0';
-		}
-		intstring = intstring.concat(i+1);
-		if (key === 'question'.concat(intstring)) {
-			URLvar = questions[i];
-		}
-	}
-
 	$.ajax({
 	    type: "GET",
 	    url: URLvar,
 	    dataType: "html",
-	    success: function(data)
-	    {
-	      switch (type) {
-		case 0:
-			/* Game */
-			$("#gameDiv").html(data);
-			break;
-		case 1:
+	    success: function(data) {
 			/* Tutorial Content */
 			$("#mainContent").html(data);
 			break;
-	}
 	    }
 	});
+}
+
+function gameOn() {
+	$('#gameDiv').toggle();
 }
 
 function LCM(A)  // A is an integer array (e.g. [-50,25,-45,-18,90,447])
