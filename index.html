@@ -11,11 +11,26 @@
 
     <title>Scrolling Nav - Start Bootstrap Template</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
     <!-- Custom CSS -->
     <link href="css/scrolling-nav.css" rel="stylesheet">
+    <link href="rpgdemo.css" rel="stylesheet">
+
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+    <script type="text/javascript" src="js/amplify.min.js"></script>
+
+    <script src="js/main.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -28,7 +43,7 @@
 
 <!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body onload="setupGlobals();"  id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -69,54 +84,176 @@
 						<li><a href="#">Open in same window</a></li>
 						</ul>
 						</div>
-				</ul>
+				    </ul>
+                    <img id="banner-symbol" src="img/symbol.png" class="img-responsive" alt="Responsive image">
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
 
-    <!-- Intro Section -->
-    <section id="intro" class="intro-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>Main Content</h1>
-                    
-                    <!--<a class="btn btn-default page-scroll" href="#about">Click Me to Scroll Down!</a>-->
+        <div class="background">
+        <!-- Intro Section -->
+        <section id="intro" class="intro-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Game</h1>
+                    </div>
                 </div>
             </div>
+            <div class="content" id="gameDiv">
+                <header>
+                    <p>Use the gamepad to move around the map. Use the Enter key for all actions. Use ESC to cancel an action or to show the main menu.</p>
+                </header>
+                <canvas class="gamecanvas" id="mapCanvas" width="416" height="352"></canvas>
+                <canvas class="gamecanvas" id="spriteCanvas" width="416" height="352"></canvas>
+                <canvas class="gamecanvas" id="menuCanvas" width="416" height="352"></canvas>
+                <canvas class="gamecanvas" id="textCanvas" width="416" height="352"></canvas>
+                <div id="gamepad"><img src="images/osck.png" usemap="#gamepadmap">
+                    <map id="gamepadmap" name="gamepadmap">
+                        <area id="upButton" shape="poly" alt="Up" coords="95,159,88,151,88,108,148,108,148,154,141,161" href="#" title="Up" />
+                        <area id="rightButton" shape="poly" alt="Right" coords="142,161,149,154,195,154,195,212,149,212,140,203" href="#" title="Right" />
+                        <area id="downButton" shape="poly" alt="Down" coords="138,205,148,215,148,261,88,261,88,216,98,206" href="#" title="Down" />
+                        <area id="leftButton" shape="poly" alt="Left" coords="96,205,88,213,42,213,42,154,87,154,95,161" href="#" title="Left" />
+                        <area id="escButton" shape="circle" alt="Esc" coords="273,183,35" href="#" title="Esc" />
+                        <area id="enterButton" shape="rect" alt="Enter" coords="313,148,380,217" href="#" title="Enter" />
+                        <area shape="default" nohref alt="" />
+                    </map>
+                </div>
+                <footer id="nokey">
+                    <br />
+                    <small id="loaded">Loading... <img src="images/ajax-loader.gif"></small>
+                </footer>
+                <div id="questionDiv">
+                    <canvas></canvas>
+                    <form></form>
+                </div>
+            </div>
+        </section>
+        
+           <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Addition/Subtraction</h1>
+                    </div>
+                </div>
+            </div>
+            <div class=content id="mainContent">
+            
+            
+            
+            <div ip="info-block">
+            <p class="info">Fractions can be added together, as long as they have the same denominator. 
+            If fractions do not have the same denominator, then the LCD should be found. Also, when adding fractions, only the numerators should be added.
+            An example is 2/5 added to 3/4. We already determined in the previous section that the LCD is 20 and that the fractions are equivalent to 8/20 and 15/20. 
+            The numerators, 8 and 15, are added together to get 23. This fraction then becomes 23/20. If changing this to a mixed number, then the answer is 1 3/20.
+    </p>
+                            
+            <p class="info">Fractions can be subtracted from other fractions, as long as they have the same denominator. 
+            If fractions do not have the same denominator, then the LCD should be found. Also, when subtracting fractions, only the numerators should be used to subtract. 
+            An example is 2/5 subtracted from 3/4. From the section about LCD, we already determined that the LCD is 20 and that the fractions are equivalent to 8/20 and 15/20. 
+            We now need to subtract 8 from 15, since we only use the numerators. This equals 7, so the fraction is now 7/20.</p>
+            </div>
+            <a class="btn btn-default" href="#" role="button">Back</a>
+            <button class="btn btn-default" type="submit">Forward</button>
+            
+            
+            
+            </div>
+        </section>
         </div>
-		<div class=content>
-		<p>This is where we will put main content!</p>
-		</div>
-    </section>
 	
-	   <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>Game</h1>
-                </div>
-            </div>
-        </div>
-		<div class=content>
-		<p>This is where we will put main content!</p>
-		</div>
-    </section>
-
-
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
 
     <!-- Scrolling Nav JavaScript -->
     <script src="js/jquery.easing.min.js"></script>
-    <script src="js/scrolling-nav.js"></script>
+    <!--script src="js/scrolling-nav.js"></script-->
+
+    <audio id="theme" preload="auto" loop>
+            <source src="audio/theme.ogg" type="audio/ogg">
+            <source src="audio/theme.mp3" type="audio/mp3">
+        </audio>
+        <audio id="explore" preload="auto" loop>
+            <source src="audio/explore.ogg" type="audio/ogg">
+            <source src="audio/explore.mp3" type="audio/mp3">
+        </audio>
+        <audio id="town" preload="auto" loop>
+            <source src="audio/town.ogg" type="audio/ogg">
+            <source src="audio/town.mp3" type="audio/mp3">
+        </audio>
+        <audio id="castle" preload="auto" loop>
+            <source src="audio/castle.ogg" type="audio/ogg">
+            <source src="audio/castle.mp3" type="audio/mp3">
+        </audio>
+        <audio id="dark" preload="auto" loop>
+            <source src="audio/dark.ogg" type="audio/ogg">
+            <source src="audio/dark.mp3" type="audio/mp3">
+        </audio>
+        <audio id="danger" preload="auto" loop>
+            <source src="audio/danger.ogg" type="audio/ogg">
+            <source src="audio/danger.mp3" type="audio/mp3">
+        </audio>
+        <script type="text/javascript" src="js/class.js"></script>
+        <script type="text/javascript" src="js/dateformat.js"></script>
+        <script type="text/javascript" src="js/engine/Animation.js"></script>
+        <script type="text/javascript" src="js/engine/Progress.js"></script>
+        <script type="text/javascript" src="js/engine/MapSquare.js"></script>
+        <script type="text/javascript" src="js/engine/SubMap.js"></script>
+        <script type="text/javascript" src="js/engine/WorldMap.js"></script>
+        <script type="text/javascript" src="js/engine/Sprite.js"></script>
+        <script type="text/javascript" src="js/engine/Chest.js"></script>
+        <script type="text/javascript" src="js/engine/Character.js"></script>
+        <script type="text/javascript" src="js/engine/Player.js"></script>
+        <script type="text/javascript" src="js/engine/Monster.js"></script>
+        <script type="text/javascript" src="js/engine/Tileset.js"></script>
+        <script type="text/javascript" src="js/engine/TextDisplay.js"></script>
+        <script type="text/javascript" src="js/engine/menu/AbstractMenu.js"></script>
+        <script type="text/javascript" src="js/engine/menu/Menu.js"></script>
+        <script type="text/javascript" src="js/engine/menu/HorizMenu.js"></script>
+        <script type="text/javascript" src="js/engine/menu/ItemMenu.js"></script>
+        <script type="text/javascript" src="js/engine/menu/SpellMenu.js"></script>
+        <script type="text/javascript" src="js/engine/menu/EquipMenu.js"></script>
+        <script type="text/javascript" src="js/engine/menu/SlotMenu.js"></script>
+        <script type="text/javascript" src="js/engine/menu/SaveMenu.js"></script>
+        <script type="text/javascript" src="js/engine/menu/LoadMenu.js"></script>
+        <script type="text/javascript" src="js/engine/menu/TitleScreenMenu.js"></script>
+        <script type="text/javascript" src="js/engine/menu/MainMenu.js"></script>
+        <script type="text/javascript" src="js/engine/menu/BuyMenu.js"></script>
+        <script type="text/javascript" src="js/engine/menu/SellMenu.js"></script>
+        <script type="text/javascript" src="js/engine/menu/ShopMenu.js"></script>
+        <script type="text/javascript" src="js/engine/menu/MonsterMenu.js"></script>
+        <script type="text/javascript" src="js/engine/menu/BattleItemMenu.js"></script>
+        <script type="text/javascript" src="js/engine/menu/BattleSpellMenu.js"></script>
+        <script type="text/javascript" src="js/engine/menu/BattleMenu.js"></script>
+        <script type="text/javascript" src="js/engine/Shop.js"></script>
+        <script type="text/javascript" src="js/engine/Game.js"></script>
+        <script type="text/javascript" src="js/engine/Battle.js"></script>
+        <script type="text/javascript" src="js/engine/rpg.js"></script>
+        <script type="text/javascript" src="js/game/images.js"></script>
+        <script type="text/javascript" src="js/game/maps.js"></script>
+        <script type="text/javascript" src="js/game/items.js"></script>
+        <script type="text/javascript" src="js/game/monsters.js"></script>
+        <script type="text/javascript" src="js/game/misc.js"></script>
+
+        <div id="qmodal" class="modal fade">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Modal title</h4>
+              </div>
+              <div class="modal-body">
+                <p>One fine body&hellip;</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
 
 </body>
 

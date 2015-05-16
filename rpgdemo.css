@@ -1,0 +1,58 @@
+header {
+	display: block;
+	position: absolute;
+	top: 1%;
+	left: 1%;
+}
+
+.gamecanvas {
+	position: absolute;
+	top: 12%;
+	left: 1%;
+	float: left;
+}
+
+#nokey {
+	position: absolute;
+	top: 60%;
+	left: 1%;
+}
+
+#gamepad {
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 1%;
+	z-index: 5;
+}
+
+#mapCanvas {
+	z-index: 1;
+}
+
+#spriteCanvas {
+	z-index: 2;
+}
+
+#menuCanvas {
+	z-index: 3;
+}
+
+#textCanvas {
+	z-index: 4;
+}
+
+footer {
+	display: block;
+	position: absolute;
+	top: 500px;
+	left: 10px;
+	padding-bottom: 30px;
+}
+
+footer small {
+	display: block;
+	margin: 0;
+	font-family: Verdana, Helvetica, sans-serif;
+	font-size: 10px;
+}
