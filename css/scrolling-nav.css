@@ -47,24 +47,24 @@ html {
 .container {
 	margin-left: auto;
     margin-right: auto;
-    width: 70%;
+    width: 30%;
     border-style: outset;
     border-width: 5px;
     border-color: black;
     background-color: white;
-    opacity: 0.9;
+    opacity: 0.6;
 	
 }
 .content{
 	min-height: 300px;
     margin-left: auto;
     margin-right: auto;
-    width: 70%;
+    width: 90%;
     border-style: outset;
     border-width: 5px;
     border-color: black;
     background-color: white;
-    opacity: 0.9;
+    opacity: 0.8;
 
 }
 
@@ -93,6 +93,7 @@ of those sections to manage the look and feel of the site. */
     margin-right: auto;
     position: relative;
     padding-bottom: 500px;
+
 }
 
 #mainContent {
@@ -106,6 +107,8 @@ of those sections to manage the look and feel of the site. */
     height: 100%;
     padding-top: 150px;
     text-align: center;
+    min-width: 100%;
+
     
 }
 

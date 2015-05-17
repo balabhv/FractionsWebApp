@@ -38,7 +38,7 @@
  * ***** END LICENSE BLOCK ***** */
  
 
-var ItemMenu = Menu.extend({
+/*var ItemMenu = Menu.extend({
     _init: function(mainMenu) {
         this._mainMenu = mainMenu;
         this._items = [];
@@ -113,4 +113,4 @@ var ItemMenu = Menu.extend({
         theItem.use(g_player);
         g_player.removeFromInventory(item.id);
     }
-});
+});*/

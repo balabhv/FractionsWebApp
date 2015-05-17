@@ -37,7 +37,7 @@
  * ***** END LICENSE BLOCK ***** */
 
 // Ratio of Sell Price to Buy Price of Items
-var SELL_PRICE_RATIO = 0.75;
+/*var SELL_PRICE_RATIO = 0.75;
  
 var ITEMTYPE_HEAL_ONE = 1;
 // var ITEMTYPE_HEAL_ALL = 2;
@@ -295,4 +295,4 @@ var g_itemData = {
             "defense": 8
         }
     }
-};
+};*/

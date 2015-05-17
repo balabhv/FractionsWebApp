@@ -37,7 +37,7 @@
  * ***** END LICENSE BLOCK ***** */
 
 /* Spells */
-var SPELLTYPE_HEAL_ONE = 1;
+/*var SPELLTYPE_HEAL_ONE = 1;
 // var SPELLTYPE_HEAL_ALL = 2;
 // var SPELLTYPE_ATTACK_ONE = 3;
 var SPELLTYPE_ATTACK_ALL = 4;
@@ -75,7 +75,7 @@ var g_spellData = {
             });
         }
     }]
-};
+}; */
 
 /* Characters */
 
@@ -88,14 +88,10 @@ var g_playerData = {
         level: 1,
         maxHP: 100,
         maxMP: 5,
-        attack: 12,
+        attack: 20,
         defense: 0,
         exp: 0,
         gold: 0,
-        weapon: ITEM_TIN_SWORD,
-        armor: ITEM_CLOTHES,
-        helmet: ITEM_CAP,
-        shield: ITEM_TIN_SHIELD,
         inventory: [],
         spells: [],
         levels: [ 0, 50, 110, 200, 350, 600, 1000, 1500, 2250, 3375, 5000,
