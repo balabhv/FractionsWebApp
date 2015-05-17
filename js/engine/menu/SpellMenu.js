@@ -39,7 +39,7 @@
  
 
 
-var SpellMenu = Menu.extend({
+/*var SpellMenu = Menu.extend({
     _init: function(mainMenu) {
         this._mainMenu = mainMenu;
         this._spells = [];
@@ -114,4 +114,4 @@ var SpellMenu = Menu.extend({
             g_textDisplay.displayText("You do not have enough mp to use " + spell.name + ".");
         }
     }
-});
+});*/

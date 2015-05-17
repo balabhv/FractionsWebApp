@@ -1,44 +1,3 @@
-/* ***** BEGIN LICENSE BLOCK *****
- * Version: MPL 1.1/GPL 2.0/LGPL 2.1
- *
- * The contents of this file are subject to the Mozilla Public License Version
- * 1.1 (the "License"); you may not use this file except in compliance with
- * the License. You may obtain a copy of the License at
- * http://www.mozilla.org/MPL/
- *
- * Software distributed under the License is distributed on an "AS IS" basis,
- * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
- * for the specific language governing rights and limitations under the
- * License.
- *
- * The Original Code is Old School RPG Map.
- *
- * The Initial Developer of the Original Code is Jono Xia.
- * Portions created by the Initial Developer are Copyright (C) 2007
- * the Initial Developer. All Rights Reserved.
- *
- * Contributor(s):
- *   Jono Xia <jono@mozilla.com>
- *   Gaurav Munjal <Gaurav0@aol.com>
- *   Jebb Burditt <jebb.burditt@gmail.com>
- *   David Leonard <sephirothcloud1025@yahoo.com>
- *
- * Alternatively, the contents of this file may be used under the terms of
- * either the GNU General Public License Version 2 or later (the "GPL"), or
- * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
- * in which case the provisions of the GPL or the LGPL are applicable instead
- * of those above. If you wish to allow use of your version of this file only
- * under the terms of either the GPL or the LGPL, and not to allow others to
- * use your version of this file under the terms of the MPL, indicate your
- * decision by deleting the provisions above and replace them with the notice
- * and other provisions required by the GPL or the LGPL. If you do not delete
- * the provisions above, a recipient may use your version of this file under
- * the terms of any one of the MPL, the GPL or the LGPL.
- *
- * ***** END LICENSE BLOCK ***** */
- 
-
-
 /* Class representing a battle */
 var Battle = Class.extend({
     _init: function() {
@@ -108,12 +67,15 @@ var Battle = Class.extend({
         
         if (keyDown)
             this._ignoringKeys = true;
+
+
     },
     
     /* Setup scripted encounter (for boss monsters, etc.) */
     setupEncounter: function(name, aryMonsters, backgroundRef) {
         
         this._background = g_imageData.images[backgroundRef].img;
+
         
         // Create encounter object
         this._encounter = {
@@ -134,6 +96,7 @@ var Battle = Class.extend({
         
         if (keyDown)
             this._ignoringKeys = true;
+
     },
     
     /* Draws battle screen */
@@ -529,37 +492,20 @@ var Battle = Class.extend({
     
     /* Player attacks monster with id provided */
     attack: function(id) {
-        $("#question").show();
-        var correct = isCorrect();
-        // Basic battle system; determine damage from attack and defense
-        var monster = this._monsterList[id];
-        var answered = true;
-        for (var i = 0 ; i < 1 ; i++) {
-            while (!answered);
-            var rand = Math.random();
-        if (!correct || rand > 0.95) {
-            this.writeMsg("You missed!");
-        } else {
-            var damage = g_player.getAttack() - monster.getDefense();
-            if (rand > 0.9) {
-                this.writeMsg("Critical Hit!");
-                damage *= 2;
-            }
-            if (damage < 1)
-                damage = 1;
-            damage -= Math.floor(Math.random() * damage / 2);
-            this.writeMsg("You attacked for " + damage + " damage.");
-            monster.damage(damage);
-
-            // If monster is dead, earn exp & gold associated.
-            if (monster.isDead()) {
-                this.earnReward(monster, id);
-            }
-        }
+        var ans = document.getElementById("answer");
+        var hidden = document.createElement("input");
+        hidden.setAttribute("type", "hidden");
+        hidden.setAttribute("value", id);
+        hidden.setAttribute("id", "hidden");
+        $('#denominator').after(hidden);
+        $("#questionDiv").show();
+        var answered = $('#denominator').val() || $('#denominator').val() != 'denominator';
+        while (!answered) {
+            var monster = this._monsterList[id];
 
         }
-        // answer question
-        
+
+
     },
     
     /* Monsters attack the player */
@@ -639,7 +585,7 @@ var Battle = Class.extend({
     },
     
     /* Use the selected item. Returns true if an item was used. */
-    useItem: function() {
+    /*useItem: function() {
         if (this._itemSelection < this._numItems) {
             var itemId = this._itemId[this._itemSelection];
             var item = g_itemData.items[itemId];
@@ -655,10 +601,10 @@ var Battle = Class.extend({
             return true;
         }
         return false;
-    },
+    },*/
     
     /* Use the selected spell. Returns true if a spell was used. */
-    useSpell: function() {
+    /*useSpell: function() {
         if (this._spellSelection < this._numSpells) {
             var spellId = this._spellId[this._spellSelection];
             var spell = g_spellData.spells[spellId];
@@ -679,7 +625,7 @@ var Battle = Class.extend({
             }
         }
         return false;
-    },
+    },*/
     
     onExit: function() {
         // What happens after the battle is over and you exit?
@@ -687,5 +633,26 @@ var Battle = Class.extend({
     
     onWin: function() {
         // What happens after the battle is over and you have won?
+    },
+    getMonsterList: function() {
+        return this._monsterList;
     }
 });
+
+function attack () {
+        var mID = $('#hidden').val();
+        var correct = isCorrect();
+        // Basic battle system; determine damage from attack and defense
+        var monster = g_battle.getMonsterList()[mID];
+        for (var i = 0 ; i < 1 ; i++) {
+        if (!correct) {
+            this.writeMsg("You missed!");
+        } else {
+            monster.damage(monster.getHP());
+            questionNum++;
+            g_battle.earnReward(monster, mID);
+        }
+
+        }
+        // answer question
+}

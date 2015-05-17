@@ -56,7 +56,7 @@ var MAIN_MENU_STATUS = 3;
 var MAIN_MENU_SAVE = 4;
 var MAIN_MENU_LOAD = 5;
 
-var NUM_MAIN_MENU_ACTIONS = 6;
+var NUM_MAIN_MENU_ACTIONS = 3;
 
 /* Class for main menu */
 var MainMenu = Menu.extend({
@@ -69,19 +69,16 @@ var MainMenu = Menu.extend({
             left: 0,
             top: 0,
             width: 150,
-            height: 200,
+            height: 150,
             radius: 25,
             thickness: 4,
             pointerLeft: 24,
             textLeft: 42,
-            heights: [ 20, 48, 76, 104, 132, 160 ],
-            texts: [ "Item", "Spell", "Equip", "Status", "Save", "Load" ],
+            heights: [ 20, 48, 76 ],
+            texts: [ "Status", "Save", "Load" ],
             // flags: flags,
             font: "bold 20px monospace",
             callbacks: [
-                function() { menu.displayItemMenu(); },
-                function() { menu.displaySpellMenu(); },
-                function() { menu.displayEquipMenu(); },
                 function() { menu.displayStatusMenu(); },
                 function() { menu.displaySaveMenu(); },
                 function() { menu.displayLoadMenu(); },

@@ -38,7 +38,7 @@
  * ***** END LICENSE BLOCK ***** */
  
 
-var NUM_EQUIP_TYPES = 4;
+/*var NUM_EQUIP_TYPES = 4;
 
 var EQUIP_WEAPON = 0;
 var EQUIP_ARMOR = 1;
@@ -179,7 +179,7 @@ var EquipSubMenu = Menu.extend({
     
     /* changes equipment to that selected from equip submenu,
        determine which equipment to unload based on equip type */
-    changeEquip: function(i) {
+    /*changeEquip: function(i) {
         var currentlyEquippedItemId;
         var toEquipItemId = this._items[i].id;
         switch(this._equipType) {
@@ -203,4 +203,4 @@ var EquipSubMenu = Menu.extend({
         g_player.removeFromInventory(toEquipItemId);
         g_player.addToInventory(currentlyEquippedItemId);
     }
-});
+});*/

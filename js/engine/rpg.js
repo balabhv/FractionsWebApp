@@ -54,7 +54,6 @@ var g_textDisplay = new TextDisplay();
 var g_menu = new MainMenu();
 var g_shop = new Shop();
 var g_battle = null;
-var g_fullscreen = false;
 var g_progress = new Progress();
 
 var g_elements = [
@@ -220,7 +219,7 @@ function loadMaps() {
                 }
                 
                 // NPCs
-                if (mapData.npcs) {
+                /*if (mapData.npcs) {
                     for (var i = 0; i < mapData.npcs.length; ++i) {
                         var npcData = mapData.npcs[i];
                         var npc = new Character(npcData.locX,
@@ -244,7 +243,7 @@ function loadMaps() {
                         map.addSprite(npc);
                         npcData.npc = npc;
                     }
-                }
+                }*/
                 
                 // Actions
                 if (mapData.actions) {
@@ -261,7 +260,7 @@ function loadMaps() {
                 }
                 
                 // Treasure Chests
-                if (mapData.chests) {
+                /*if (mapData.chests) {
                     for (var i = 0; i < mapData.chests.length; ++i) {
                         var chestData = mapData.chests[i];
                         var chest = new Chest(chestData.locX,
@@ -272,7 +271,7 @@ function loadMaps() {
                         chest.action = chestData.action;
                         map.addSprite(chest);
                     }
-                }
+                }*/
                 
                 if (++setupFunctions == numSubmaps)
                     g_progress.finishSetup();

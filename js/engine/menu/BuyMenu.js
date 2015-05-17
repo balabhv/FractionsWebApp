@@ -38,7 +38,7 @@
  * ***** END LICENSE BLOCK ***** */
  
  
-var BuyMenu = Menu.extend({
+/*var BuyMenu = Menu.extend({
     _init: function(parent, shop, itemList) {
         var menu = this;
         this._parent = parent;
@@ -108,4 +108,4 @@ var BuyMenu = Menu.extend({
     callback: function(i) {
         this._shop.handlePurchase(this._items[i]);
     }
-});
+});*/

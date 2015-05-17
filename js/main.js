@@ -1,8 +1,8 @@
 var tutorials = [];
 
 function setupGlobals() {
-	var temp = '/partials/tutorialx.html';
-	for (var i = 0 ; i < 4 ; i++) {
+	var temp = '../partials/tutorialx.html';
+	for (var i = 0 ; i < 5 ; i++) {
 		var intstring = '';
 		if (i < 10) {
 			intstring = '0';
@@ -11,9 +11,17 @@ function setupGlobals() {
 		var url = temp.replace("x", intstring);
 		tutorials.push(url); 
 	}
-	//$('#gameDiv').hide();
+	console.log(tutorials);
+
+	question01();
+	$('#questionDiv').hide();
+	$('#wholenum').hide();
 
 }
+
+$(document).ready(function() {
+	loadPage('tutorial01');
+});
 
 
 /*
@@ -25,31 +33,17 @@ function setupGlobals() {
 function loadPage(key) {
 	
 	/* variable for url */
-	var URLvar = '';
+	var URLvar = '../partials/';
 
-	/* if else chain to set url variable */
+	
+	URLvar.concat(key);
+	URLvar.concat('.html');
+	
+	$.get(URLvar, function (content) {
 
-	for (var i = 0 ; i < 4 ; i++) {
-		var intstring = '';
-		if (i < 10) {
-			intstring = '0';
-		}
-		intstring = intstring.concat(i+1);
-		if (key === 'tutorial'.concat(intstring)) {
-			URLvar = tutorials[i];
-		}
-	}
-
-	$.ajax({
-	    type: "GET",
-	    url: URLvar,
-	    dataType: "html",
-	    success: function(data) {
-			/* Tutorial Content */
-			$("#mainContent").html(data);
-			break;
-	    }
-	});
+        // Store the fetched content in the cache.
+        $("#mainContent").html(content);
+      });
 }
 
 function gameOn() {

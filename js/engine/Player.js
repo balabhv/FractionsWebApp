@@ -99,14 +99,11 @@ var Player = Character.extend({
     },
     
     getAttack: function() {
-        return this._attack + g_itemData.items[this._weapon].attack;
+        return this._attack;
     },
     
     getDefense: function() {
-        return this._defense +
-            g_itemData.items[this._armor].defense +
-            g_itemData.items[this._helmet].defense +
-            g_itemData.items[this._shield].defense;
+        return this._defense;
     },
     
     getLevel: function() {

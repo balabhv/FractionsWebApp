@@ -38,7 +38,7 @@
  * ***** END LICENSE BLOCK ***** */
  
  
-var SellMenu = Menu.extend({
+/*var SellMenu = Menu.extend({
     _init: function(parent, shop) {
         var menu = this;
         this._parent = parent;
@@ -111,4 +111,4 @@ var SellMenu = Menu.extend({
         if (!this._shop.isQuantityDialogDisplayed())
             this._parent.setCurrentMenu(this._parent);
     }
-});
+});*/
