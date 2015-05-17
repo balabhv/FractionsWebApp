@@ -12,10 +12,10 @@ function question01 (){
     ctx.clearRect(0,0,350,200);
     var img = document.getElementById("circ3.4");
     ctx.drawImage(img, 50,50);                   
-    ctx.font = "56px Comic Sans MS";
+    ctx.font = "25px serif";
     ctx.fillStyle = "black";
-    ctx.textAlign = "left";                    
-    ctx.fillText("=", canvas.width - 120 , canvas.height/2 + 28);
+    ctx.textAlign = "center"; 
+    ctx.fillText("What fraction does this represent?", 175 , 180 );
 };
 
 
@@ -24,10 +24,10 @@ function question02 () {
 	ctx.clearRect(0,0,350,200);
 	 var img = document.getElementById("rect3.6");
     ctx.drawImage(img, 50,25);                   
-	ctx.font = "56px Comic Sans MS";
-	ctx.fillStyle = "black";
-	ctx.textAlign = "left";                    
-	ctx.fillText("=", canvas.width - 120 , canvas.height/2 + 28);  
+	ctx.font = "25px serif";
+    ctx.fillStyle = "black";
+    ctx.textAlign = "center"; 
+    ctx.fillText("What fraction does this represent?", 175 , 180 );  
 };
 
 function question03() {
