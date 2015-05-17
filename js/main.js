@@ -1,7 +1,7 @@
 var tutorials = [];
 
 function setupGlobals() {
-	var temp = '../partials/tutorialx.html';
+	var temp = '/partials/tutorialx.html';
 	for (var i = 0 ; i < 5 ; i++) {
 		var intstring = '';
 		if (i < 10) {
@@ -33,12 +33,12 @@ $(document).ready(function() {
 function loadPage(key) {
 	
 	/* variable for url */
-	var URLvar = '../partials/';
+	var URLvar = '/partials/';
 
 	
 	URLvar.concat(key);
 	URLvar.concat('.html');
-	
+
 	$.get(URLvar, function (content) {
 
         // Store the fetched content in the cache.
