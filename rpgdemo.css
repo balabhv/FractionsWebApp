@@ -20,7 +20,7 @@ header {
 #gamepad {
 	display: block;
 	position: absolute;
-	top: 50%;
+	top: 53%;
 	left: 1%;
 	z-index: 5;
 }

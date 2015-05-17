@@ -457,6 +457,10 @@ var Battle = Class.extend({
             if (!this._monsterList[i].isDead())
                 return;
 
+        if (questionNum == 19) {
+            
+        }
+
         // End battle and award exp & gold to player.
         g_player.earnGold(this._totalGold);
         var gainedLevel = g_player.earnExp(this._totalExp);
@@ -535,12 +539,15 @@ var Battle = Class.extend({
                 break;
             case 12:
                 question13();
+                $('#wholenum').show();
                 break;
             case 13:
                 question14();
+                $('#wholenum').show();
                 break;
             case 14:
                 question15();
+                $('#wholenum').show();
                 break;
             case 15:
                 question16();
@@ -712,6 +719,7 @@ function attack () {
             g_battle.earnReward(monster, mID);
             questionNum++;
             $("#questionDiv").hide();
+            $('#wholenum').hide();
 
         }
 
