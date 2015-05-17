@@ -27,7 +27,7 @@ function question02 () {
 	ctx.font = "25px serif";
     ctx.fillStyle = "black";
     ctx.textAlign = "center"; 
-    ctx.fillText("What fraction does this represent?", 175 , 180 );  
+    ctx.fillText("What fraction does this represent?", 183 , 180 );  
 };
 
 function question03() {
