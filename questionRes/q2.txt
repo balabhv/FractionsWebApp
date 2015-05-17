@@ -1,0 +1,22 @@
+<canvas id="canvas" width="350" height="200" style="border: 1px solid #000000;"> 
+                <button type="button" class="btn btn-primary btn-lg"> something </button>
+            </canvas>
+                <script>
+                    window.onload = function() {
+                    var canvas = document.getElementById("canvas");
+                    var ctx = canvas.getContext("2d");
+                    ctx.fillStyle = "#FF0000";
+                    ctx.fillRect(30,60,150,75);
+                    ctx.fillStyle = "#FF88FF";
+                    ctx.fillRect( 30 , 60 , 75, 75);                   
+                    ctx.font = "56px Comic Sans MS";
+                    ctx.fillStyle = "red";
+                    ctx.textAlign = "left";                    
+                    ctx.fillText("=", canvas.width - 120 , canvas.height/2 + 28); 
+                    };                  
+                </script>
+                <form style="float : right; width : 200px;">
+                    Numerator: <input type="text" name="FirstName" value="Top"><br>
+                    Denominator: <input type="text" name="LastName" value="Bottom"><br>
+                    <input type="submit" value="Submit">
+                </form> 
