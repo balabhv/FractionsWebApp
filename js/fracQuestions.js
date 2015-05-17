@@ -8,16 +8,14 @@ var ctx = canvas.getContext("2d");
 
 
 function question01 (){
-	questionNum = 0;
+    questionNum = 0;
     ctx.clearRect(0,0,350,200);
     var img = document.getElementById("circ3.4");
     ctx.drawImage(img, 50,50);                   
-    ctx.font = "56px Comic Sans MS";
+    ctx.font = "25px serif";
     ctx.fillStyle = "black";
-    ctx.textAlign = "left";                    
-    ctx.fillText("=", canvas.width - 120 , canvas.height/2 + 28);
-
-
+    ctx.textAlign = "center"; 
+    ctx.fillText("What fraction does this represent?", 175 , 180 );
 };
 
 
@@ -26,11 +24,10 @@ function question02 () {
 	ctx.clearRect(0,0,350,200);
 	 var img = document.getElementById("rect3.6");
     ctx.drawImage(img, 50,25);                   
-	ctx.font = "56px Comic Sans MS";
-	ctx.fillStyle = "black";
-	ctx.textAlign = "left";                    
-	ctx.fillText("=", canvas.width - 120 , canvas.height/2 + 28);  
-
+	ctx.font = "25px serif";
+    ctx.fillStyle = "black";
+    ctx.textAlign = "center"; 
+    ctx.fillText("What fraction does this represent?", 175 , 180 );  
 };
 
 function question03() {
@@ -53,7 +50,6 @@ function question04 () {
     ctx.drawImage(img , 122 , 50);
     var img = document.getElementById("2over4");
     ctx.drawImage(img, 220,35);
-
 }
 
 function question05() {
@@ -65,7 +61,6 @@ function question05() {
     ctx.drawImage(img , 122 , 50);
     var img = document.getElementById("4over2");
     ctx.drawImage(img, 220,35);
-
 }
 
 function question06() {
@@ -77,7 +72,6 @@ function question06() {
     ctx.drawImage(img , 118 , 80);
     var img = document.getElementById("1over2");
     ctx.drawImage(img, 220,35);
-
 }
 
 function question07() {
@@ -246,7 +240,7 @@ function question20 () {
     ctx.drawImage(img, 220,35);
 }
 
-
+//this function returns true or false based on the answer provided
 function isCorrect() {
 	var retBool = false;
 	var wholenum = $('#wholenum').val();
@@ -381,7 +375,7 @@ function isCorrect() {
 				retBool = true;
 			}
 			break;
-				break;
+		
 	}
 
                     
