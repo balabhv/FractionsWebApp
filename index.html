@@ -60,19 +60,13 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav">
-                        <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                        <div class="btn-group">
-    					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-    						Tutorial <span class="caret"></span>
-    					</button>
-    					<ul class="dropdown-menu" role="menu">
-    						<li><a href="#">Mixed/Irregular Fractions</a></li>
-    						<li><a href="#">Simplifying Fractions</a></li>
-    						<li><a href="#">Finding the LCD</a></li>
-    						<li><a href="#">Addition/Subtraction</a></li>
-    						</ul>
+    						<li class=""><button onclick="loadPage('tutorial01')" class="btn btn-default">What is a Fraction?</button></li>
+    						<li class=""><button onclick="loadPage('tutorial02')" class="btn btn-default">Simplifying</button></li>
+    						<li class=""><button onclick="loadPage('tutorial03')" class="btn btn-default">Improper/Mixed Fractions</button></li>
+                            <li class=""><button onclick="loadPage('tutorial04')" class="btn btn-default">LCD</button></li>
+    						<li class=""><button onclick="loadPage('tutorial05')" class="btn btn-default">Addition/Subtraction</button></li>
+    				</ul>
 
-    					</div>
                 
                 </div>
 
@@ -271,6 +265,25 @@
               <img id="plus" src="./questionRes/plus.png"> 
               <img id="sub" src="./questionRes/sub.png"> 
         </div>
+
+        <div class="modal fade">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Congratulations!</h4>
+              </div>
+              <div class="modal-body">
+                <p>You win!</p>
+                <img src="https://cdn2.iconfinder.com/data/icons/filled-icons/493/happy-512.png"></img>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="window.location.reload();">Play Again</button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
 
 
 </body>

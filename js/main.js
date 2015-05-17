@@ -31,6 +31,9 @@ function loadPage(key) {
 			$('#title').html('Addition/Subtraction');
 		}
 	});
+
+	$('html, body').animate({ scrollTop: $('#mainContent').offset().top }, 'slow');
+            return false;
 }
 
 function gameOn() {

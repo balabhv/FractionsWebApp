@@ -165,6 +165,7 @@ var g_monsterData = {
     }, {*/
         //"id": 9,
         "id":0,
+        
         "name": "ninja minion",
         "hp": 100,
         "attack": 55,
