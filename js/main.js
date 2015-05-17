@@ -33,13 +33,8 @@ $(document).ready(function() {
 function loadPage(key) {
 	
 	/* variable for url */
-	var URLvar = 'partials/';
 
-	
-	URLvar.concat(key);
-	URLvar.concat('.html');
-
-	$.get(URLvar, function (content) {
+	$.get('partials/' + key + '.html', function (content) {
 
         // Store the fetched content in the cache.
         $("#mainContent").html(content);
