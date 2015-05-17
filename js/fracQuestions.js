@@ -16,8 +16,10 @@ function question01 (){
     ctx.fillStyle = "black";
     ctx.textAlign = "left";                    
     ctx.fillText("=", canvas.width - 120 , canvas.height/2 + 28);
-
-
+     ctx.font = "25px serif";
+	ctx.fillStyle = "black";
+	ctx.textAlign = "center"; 
+    ctx.fillText("What fraction does this represent", 175 , 180 );
 };
 
 
@@ -30,6 +32,10 @@ function question02 () {
 	ctx.fillStyle = "black";
 	ctx.textAlign = "left";                    
 	ctx.fillText("=", canvas.width - 120 , canvas.height/2 + 28);  
+	ctx.font = "25px serif";
+	ctx.fillStyle = "black";
+	ctx.textAlign = "center"; 
+    ctx.fillText("What fraction does this represent", 175 , 180 );
 
 };
 
