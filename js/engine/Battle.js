@@ -458,7 +458,7 @@ var Battle = Class.extend({
                 return;
 
         if (questionNum == 19) {
-            
+
         }
 
         // End battle and award exp & gold to player.
@@ -466,8 +466,10 @@ var Battle = Class.extend({
         var gainedLevel = g_player.earnExp(this._totalExp);
         this.writeMsg("You have earned " + this._totalExp + " exp");
         this.writeMsg("and " + this._totalGold + " GP.");
-        if (gainedLevel)
+        if (gainedLevel) {
             this.writeMsg("You gained a level!");
+            g_player.heal(g_player.getMaxHP());
+        }
         this._over = true;
         this._win = true;
         this._mainMenu.clearPointer();
