@@ -492,12 +492,72 @@ var Battle = Class.extend({
     
     /* Player attacks monster with id provided */
     attack: function(id) {
-        var ans = document.getElementById("answer");
-        var hidden = document.createElement("input");
-        hidden.setAttribute("type", "hidden");
+        var hidden = document.getElementById("hidden");
         hidden.setAttribute("value", id);
-        hidden.setAttribute("id", "hidden");
         $('#denominator').after(hidden);
+        var monster = this._monsterList[id];
+        switch (questionNum) {
+            case 0:
+                question01();
+                break;
+            case 1:
+                question02();
+                break;
+            case 2:
+                question03();
+                break;
+            case 3:
+                question04();
+                break;
+            case 4:
+                question05();
+                break;
+            case 5:
+                question06();
+                break;
+            case 6:
+                question07();
+                break;
+            case 7:
+                question08();
+                break;
+            case 8:
+                question09();
+                break;
+            case 9:
+                question10();
+                break;
+            case 10:
+                question11();
+                break;
+            case 11:
+                question12();
+                break;
+            case 12:
+                question13();
+                break;
+            case 13:
+                question14();
+                break;
+            case 14:
+                question15();
+                break;
+            case 15:
+                question16();
+                break;
+            case 16:
+                question17();
+                break;
+            case 17:
+                question18();
+                break;
+            case 18:
+                question19();
+                break;
+            case 19:
+                question20();
+                break;
+        }
         $("#questionDiv").show();
         var answered = $('#denominator').val() || $('#denominator').val() != 'denominator';
         while (!answered) {
@@ -649,8 +709,10 @@ function attack () {
             this.writeMsg("You missed!");
         } else {
             monster.damage(monster.getHP());
-            questionNum++;
             g_battle.earnReward(monster, mID);
+            questionNum++;
+            $("#questionDiv").hide();
+
         }
 
         }
