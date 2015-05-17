@@ -30,7 +30,7 @@ html {
 }
 
 #banner-symbol {
-    float: right;
+    /*float: right;*/
 }
 
 .background {
@@ -47,7 +47,7 @@ html {
 .container {
 	margin-left: auto;
     margin-right: auto;
-    width: 30%;
+    width: 50%;
     border-style: outset;
     border-width: 5px;
     border-color: black;
@@ -72,6 +72,12 @@ html {
     padding: 10px;
     width: 40%;
     
+}
+
+#p1{
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
 }
 
 #questionDiv {
@@ -101,6 +107,15 @@ of those sections to manage the look and feel of the site. */
     padding-top: 5px;
     text-align: center;
     background: #fff;
+    padding-bottom: 30px;
+
+}
+
+#info-block {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 .intro-section {
@@ -115,6 +130,7 @@ of those sections to manage the look and feel of the site. */
 .about-section {
     height: 100%;
     padding-top: 5px;
+    padding-bottom: 30px;
     text-align: center;
     
 }

@@ -3,13 +3,7 @@
 
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Scrolling Nav - Start Bootstrap Template</title>
+    <title>Fraction Jackson: The Wandering Samurai</title>
 
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
@@ -31,7 +25,7 @@
     <script type="text/javascript" src="js/amplify.min.js"></script>
 
     <script src="js/main.js"></script>
-    <script src="js/fractionsLvl1.js"></script>
+    
     
 
 
@@ -51,45 +45,37 @@
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="Banner-container">
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-					
-                </button>
-				<a class="navbar-brand" href="#">Welcome</a>
-                <!--<a class="navbar-brand page-scroll" href="#page-top">Welcome</a>-->
-            </div>
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+    					
+                    </button>
+    				<a class="navbar-brand" href="#">Fraction Jackson: The Wandering Samurai</a>
+                    <!--<a class="navbar-brand page-scroll" href="#page-top">Welcome</a>-->
+                </div>
+                <img id="banner-symbol" src="img/symbol.png" class="img-responsive navbar-right" alt="Responsive image">
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav">
+                        <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                        <div class="btn-group">
+    					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+    						Tutorial <span class="caret"></span>
+    					</button>
+    					<ul class="dropdown-menu" role="menu">
+    						<li><a href="#">Mixed/Irregular Fractions</a></li>
+    						<li><a href="#">Simplifying Fractions</a></li>
+    						<li><a href="#">Finding the LCD</a></li>
+    						<li><a href="#">Addition/Subtraction</a></li>
+    						</ul>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <div class="btn-group">
-					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-						Tutorial <span class="caret"></span>
-					</button>
-					<ul class="dropdown-menu" role="menu">
-						<li><a href="#">Mixed/Irregular Fractions</a></li>
-						<li><a href="#">Simplifying Fractions</a></li>
-						<li><a href="#">Finding the LCD</a></li>
-						<li><a href="#">Addition/Subtraction</a></li>
-						</ul>
-						</div>
-					 <div class="btn-group">
-					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-						Game Options <span class="caret"></span>
-					</button>
-					<ul class="dropdown-menu" role="menu">
-						<li><a href="#">Open in new window</a></li>
-						<li><a href="#">Open in same window</a></li>
-						</ul>
-						</div>
-				    </ul>
-                    <img id="banner-symbol" src="img/symbol.png" class="img-responsive" alt="Responsive image">
-            </div>
+    					</div>
+                
+                </div>
+
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
@@ -101,7 +87,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1>Game</h1>
+                        <h1>Fraction Jackson: The Wandering Samurai</h1>
                     </div>
                 </div>
             </div>
@@ -134,13 +120,15 @@
                     <script></script>
 
                     <form id="answer" onsubmit="attack ();" style="float : right; width : 200px;" name="ans">
-                        <input type="text" value="numerator" name="numerator"></input>
+                        <input id="wholenum" display="none" class="wholenuminput" type="text" name="wholenum" value="wholenum  + "><br> 
+                        <input type="text" id="numerator" value="numerator" name="numerator"></input>
 
                         <br></br>
 
                         <hr></hr>
 
                         <input id="denominator" type="text" value="denominator" name="denominator"></input>
+                        <input id="hidden" type="hidden" value=""></input>
 
                         <br></br>
 
@@ -155,12 +143,22 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1>Addition/Subtraction</h1>
+                        <h1 id="title">Tutorials</h1>
                     </div>
                 </div>
             </div>
             <div class=content id="mainContent">
-            
+                <div ip="info-block">
+                    <p class="info" id="p1">Welcome and thank you for taking the time to be here for our demonstration. 
+                    We are team Fraction Jackson!! Otherwise known as Jeff Putnam, Chris Berns, Michele Bonin, and Virinchi Balabhadrapatruni. 
+                    We are 4 aspiring students involved in the fields of education and computer science, and we are striving to build a fun interactive application 
+                    that takes away from some of the confusion often involved involved in learning fraction conversion and addition/subtraction, 
+                    as well as the tedious repetition involved in reinforcing theses key concepts.</p>
+                                    
+                    <p class="info" id="p1"></p>
+                </div>
+                
+                <button onClick='loadPage("tutorial01")' class="btn btn-default">Go to first page of the tutorial</button>
             </div>
         </section>
         </div>
@@ -235,6 +233,44 @@
         <script type="text/javascript" src="js/game/items.js"></script>
         <script type="text/javascript" src="js/game/monsters.js"></script>
         <script type="text/javascript" src="js/game/misc.js"></script>
+        <script src="js/fracQuestions.js"></script>
+
+          <div class="hidden">
+
+              <img id="1over2" src="./questionRes/1over2.png">
+              <img id="1over3" src="./questionRes/1over3.png">
+              <img id="1over4" src="./questionRes/1over4.png">
+              <img id="1over6" src="./questionRes/1over6.png">
+              <img id="2over4" src="./questionRes/2over4.png">
+              <img id="3over4" src="./questionRes/3over4.png">
+              <img id="3over5" src="./questionRes/3over5.png">
+              <img id="4over2" src="./questionRes/4over2.png">
+              <img id="4over5" src="./questionRes/4over5.png">
+              <img id="4over7" src="./questionRes/4over7.png">
+              <img id="4over8" src="./questionRes/4over8.png">
+              <img id="6over7" src="./questionRes/6over7.png">
+              <img id="6over8" src="./questionRes/6over8.png">
+              <img id="8over16" src="./questionRes/8over16.png">
+              <img id="13over8" src="./questionRes/13over8.png">
+              <img id="13over50" src="./questionRes/13over50.png">
+              <img id="3over20" src="./questionRes/3over20.png">
+              <img id="3and3over4" src="./questionRes/3and3over4.png">
+              <img id="12and1over3" src="./questionRes/12and1over3.png">
+              <img id="52over6" src="./questionRes/52over6.png">
+              <img id="39over6" src="./questionRes/39over6.png">
+              <img id="75over20" src="./questionRes/75over20.png">
+              <img id="1over30" src="./questionRes/1over30.png">
+              <img id="circ1.2" src="./questionRes/circ1.2.png">
+              <img id="circ3.4" src="./questionRes/circ3.4.png">
+              <img id="rect1.2" src="./questionRes/rect1.2.png">
+              <img id="sqr2.4" src="./questionRes/sqr2.4.png">
+              <img id="sqr3.4" src="./questionRes/sqr3.4.png">
+              <img id="rect2.6" src="./questionRes/rect2.6.png">
+              <img id="rect3.6" src="./questionRes/rect3.6.png">
+              <img id="rect4.6" src="./questionRes/rect4.6.png">
+              <img id="plus" src="./questionRes/plus.png"> 
+              <img id="sub" src="./questionRes/sub.png"> 
+        </div>
 
 
 </body>

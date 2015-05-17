@@ -1,27 +1,11 @@
-var tutorials = [];
+var mID = 0;
 
 function setupGlobals() {
-	var temp = 'partials/tutorialx.html';
-	for (var i = 0 ; i < 5 ; i++) {
-		var intstring = '';
-		if (i < 10) {
-			intstring = '0';
-		}
-		intstring = intstring.concat(i+1);
-		var url = temp.replace("x", intstring);
-		tutorials.push(url); 
-	}
-	console.log(tutorials);
 
-	question01();
 	$('#questionDiv').hide();
 	$('#wholenum').hide();
 
 }
-
-$(document).ready(function() {
-	loadPage('tutorial01');
-});
 
 
 /*
@@ -33,17 +17,20 @@ $(document).ready(function() {
 function loadPage(key) {
 	
 	/* variable for url */
-	var URLvar = 'partials/';
 
-	
-	URLvar.concat(key);
-	URLvar.concat('.html');
-
-	$.get(URLvar, function (content) {
-
-        // Store the fetched content in the cache.
-        $("#mainContent").html(content);
-      });
+	$("#mainContent").load(key + '.html', function() {
+		if (key === 'tutorial01') {
+			$('#title').html('What is a Fraction?');
+		} else if (key === 'tutorial02') {
+			$('#title').html('Simplification');
+		} else if (key === 'tutorial03') {
+			$('#title').html('Improper/Mixed Fractions');
+		} else if (key === 'tutorial04') {
+			$('#title').html('LCD');
+		} else {
+			$('#title').html('Addition/Subtraction');
+		}
+	});
 }
 
 function gameOn() {
